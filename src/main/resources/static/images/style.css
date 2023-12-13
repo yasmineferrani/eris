@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+.conteneur{
+    width: 80%;
+    min-width: 400px;
+    max-width: 800px;
+}
+
+.center {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #dbe4ed;
+}
+
+.ville{
+    width: 30%;
+}
+
+*{
+    font-family: avenir, sans-serif;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border: none;
+}/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: -10%;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+}
+.item {
+    background: #ce8888;
+    flex-basis: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.div1{
+    background-color: white;
+    width: 50%;
+    float: left;
+}
+
+.div2{
+    background-color: white;
+    width: 50%;
+    float: right;
+}
